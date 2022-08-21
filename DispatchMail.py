@@ -15,7 +15,7 @@ def useGmailServer():
     with smtplib.SMTP(host='smtp.gmail.com',port=587) as smtp:
         smtp.ehlo()
         smtp.starttls() #use tls encyption algorithm
-        smtp.login('mazisi@gmail.com','fqpmizvkkhrsclqk') #remember to generate app password
+        smtp.login('mazisi@gmail.com','testt') #remember to generate app password
         smtp.send_message(email)
 
 
@@ -32,7 +32,7 @@ def useMailtrapServer():
     
     Come lets enjoy scripting with python."""
 
-    with smtplib.SMTP("smtp.mailtrap.io") as server:
+    with smtplib.SMTP("smtp.mailtrap.io", 2525) as server:
         server.login("cc6ff816900d6a", "9e77b9d1c21041")
         server.sendmail(sender, receiver, message)
 
